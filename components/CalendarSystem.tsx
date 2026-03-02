@@ -26,7 +26,7 @@ export const CalendarSystem: React.FC = () => {
   useEffect(() => {
     const fetchAllData = async () => {
       try {
-        const response = await fetch("http://localhost:8000/api/v1/tours");
+        const response = await fetch("http://localhost:10000/api/v1/tours");
         const data = await response.json();
         
         const processedEvents = data.map((item: any) => ({

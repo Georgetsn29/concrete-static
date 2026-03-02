@@ -19,7 +19,7 @@ export const About: React.FC = () => {
   useEffect(() => {
     const fetchMembers = async () => {
       try {
-        const response = await fetch("http://localhost:8000/api/v1/bandMembers");
+        const response = await fetch("http://localhost:10000/api/v1/bandMembers");
         if (!response.ok) throw new Error("Failed to fetch");
         
         const data = await response.json();
