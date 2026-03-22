@@ -3,14 +3,17 @@ import { CalendarSystem } from './components/CalendarSystem';
 import { Navbar } from './components/Navbar';
 import { Home } from './components/Home';
 import { About } from './components/About';
+import { BootScreen } from './components/BootScreen';
 import { PageType } from './types';
 
 const GRAIN_URI = "data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E";
 
 const App: React.FC = () => {
   const [currentPage, setCurrentPage] = useState<PageType>('HOME');
+  const [isBooting, setIsBooting] = useState(true);
   const containerRef = useRef<HTMLDivElement>(null);
 
+  // Global 3D Effect for all pages
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       if (!containerRef.current) return;
@@ -41,8 +44,10 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen w-full flex items-center justify-center p-5 pt-24 sm:p-10 relative overflow-hidden font-['Inter'] selection:bg-[var(--accent)] selection:text-white">
-      {/* Noise Overlay */}
+    <>
+      {isBooting && <BootScreen onComplete={() => setIsBooting(false)} />}
+      <div className={`min-h-screen w-full flex items-center justify-center p-5 pt-24 sm:p-10 relative overflow-hidden font-['Inter'] selection:bg-[var(--accent)] selection:text-white transition-opacity duration-1000 ${isBooting ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
+        {/* Noise Overlay */}
       <div 
         className="fixed top-0 left-0 w-full h-full pointer-events-none z-40 opacity-[0.04]"
         style={{ backgroundImage: `url("${GRAIN_URI}")` }}
@@ -90,7 +95,8 @@ const App: React.FC = () => {
           }
         }
       `}</style>
-    </div>
+      </div>
+    </>
   );
 };
 
