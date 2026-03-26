@@ -21,10 +21,10 @@ interface MemberModalProps {
 
 export const MemberModal: React.FC<MemberModalProps> = ({ member, onClose }) => {
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+    <div className="fixed inset-0 z-[100] flex items-end md:items-center justify-center p-4">
       <div className="absolute inset-0 bg-black/80 backdrop-blur-sm" onClick={onClose} />
       
-      <div className="relative w-full max-w-xl bg-[var(--concrete-100)] border-8 border-[var(--concrete-shadow)] shadow-[20px_20px_0px_var(--accent)] p-6 md:p-10 animate-[memberSlideIn_0.25s_cubic-bezier(0.23,1,0.32,1)]">
+      <div className="relative  w-full max-w-xl bg-[var(--concrete-100)] border-8 border-[var(--concrete-shadow)] shadow-[20px_20px_0px_var(--accent)] p-6 md:p-10 animate-[memberSlideIn_0.25s_cubic-bezier(0.23,1,0.32,1)]">
         <button 
           onClick={onClose}
           className="absolute top-2 right-2 md:top-4 md:right-4 w-12 h-12 flex items-center justify-center text-3xl font-bold bg-[var(--concrete-shadow)] text-white hover:bg-[var(--accent)] transition-colors z-20 shadow-[4px_4px_0px_var(--accent)]"

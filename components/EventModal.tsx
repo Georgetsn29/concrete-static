@@ -19,7 +19,7 @@ export const EventModal: React.FC<EventModalProps> = ({ day, events, onClose }) 
     <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
       <div className="absolute inset-0 bg-black/90 backdrop-blur-md" onClick={onClose} />
       
-      <div className="relative w-full max-w-2xl bg-[var(--concrete-200)] border-4 border-[var(--concrete-shadow)] shadow-[30px_30px_0px_var(--accent)] p-8 md:p-12 animate-[slideUp_0.3s_ease-out]">
+      <div className="relative w-full max-w-2xl bg-[var(--concrete-200)] border-4 border-[var(--concrete-shadow)] shadow-[30px_30px_0px_var(--accent)] p-6 md:p-12 animate-[slideUp_0.3s_ease-out]">
         <button 
           onClick={onClose}
           className="absolute top-4 right-4 text-3xl font-bold hover:text-[var(--accent)] transition-colors"

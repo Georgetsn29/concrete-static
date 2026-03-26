@@ -58,7 +58,7 @@ const App: React.FC = () => {
       {/* Main Content Wrapper with 3D Effect */}
       <main 
         ref={containerRef}
-        className="bg-[var(--concrete-200)] border-[12px] border-[var(--concrete-shadow)] shadow-[20px_20px_0px_rgba(0,0,0,0.5)] lg:shadow-[40px_40px_0px_rgba(0,0,0,0.5)] max-w-[1400px] w-full min-h-[600px] transition-transform duration-100 ease-out"
+        className="bg-[var(--concrete-200)] border-[12px] border-[var(--concrete-shadow)] shadow-[20px_20px_0px_rgba(0,0,0,0.5)] lg:shadow-[40px_40px_0px_rgba(0,0,0,0.5)] max-w-[1400px] w-full min-h-[600px] h-full transition-transform duration-100 ease-out"
         style={{ transformStyle: 'preserve-3d', transform: 'skewY(-1deg)' }}
       >
         <div className="w-full h-full overflow-hidden relative bg-[var(--concrete-200)]">
